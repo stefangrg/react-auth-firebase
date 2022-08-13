@@ -1,0 +1,48 @@
+/* Login component */
+
+  .auth{
+    
+    background: rgb(69,69,123);
+    background: radial-gradient(circle, rgba(69,69,123,1) 0%, rgba(55,55,92,1) 100%);
+    min-height:100vh;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .auth__title{
+      font-size: 25px;
+      color:#ffffff;
+      text-align: center;
+      font-weight: 400;
+      margin-bottom:50px;
+    }
+
+    .auth__container{
+      padding:20px;
+      width:100%;
+      max-width: 500px;
+    }
+
+    .auth__text-link{
+      color:#ffffff;
+      text-decoration: none;
+    }
+
+    .auth__text-link.auth__text-link--centered{
+      display: block;
+      text-align: center;
+      margin-top:40px;
+    }
+
+    .button{
+      margin: 0 auto;
+      margin-top:30px;
+    }
+
+    .input{
+      width:100%;
+      margin-bottom:20px;
+    }
+
+}

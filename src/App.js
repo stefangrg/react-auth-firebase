@@ -1,10 +1,10 @@
-import './App.css';
-import Login from './Components/Login/login';
+import './scss/App.scss'
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-          <Login></Login>
+        <Outlet/>
     </div>
   );
 }
