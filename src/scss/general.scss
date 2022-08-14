@@ -11,7 +11,7 @@
     &:hover{
       cursor: pointer;
     }
-    
+
   }
   
   /* Input */
@@ -25,6 +25,33 @@
 
     &:focus{
       outline:none;
+    }
+
+  }
+
+  /* Navbar */
+
+  .navbar{
+    background-color:$color-purple;
+    min-height: 60px;
+
+    ul{
+      margin:0;
+      padding:0;
+      list-style-type: none;
+
+      li{
+        line-height: 60px;
+        display: inline;
+        padding-right: 15px;
+
+        a{
+          color:#ffffff;
+          text-decoration: none;
+        }
+
+      }
+
     }
 
   }

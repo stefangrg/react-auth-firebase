@@ -8,27 +8,43 @@ import Register from './Components/Auth/register';
 import ForgotPassword from './Components/Auth/forgotPassword';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from './Components/dashboard';
+import { AuthProvider } from './Components/Contexts/AuthProvider';
+import PrivateRoute from './Components/PrivateRoute';
+import GuestRoute from './Components/GuestRoute';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <React.StrictMode>
+
+    <AuthProvider>
 
     <BrowserRouter>
 
     <Routes>
 
       <Route path="/" element={<App/>}>
-        <Route index element={<Dashboard/>}/>
-        <Route path="login" element={<Login/>}/>
-        <Route path="register" element={<Register/>}/>
-        <Route path="forgot-password" element={<ForgotPassword/>}/>
+
+        <Route index element={
+          <PrivateRoute>
+            <Dashboard/>
+          </PrivateRoute>
+        }/>
+
+        <Route path="login" element={<GuestRoute><Login/></GuestRoute>}/>
+        <Route path="register" element={<GuestRoute><Register/></GuestRoute>}/>
+        <Route path="forgot-password" element={<GuestRoute><ForgotPassword/></GuestRoute>}/>
+
       </Route>
       
     </Routes>
 
     </BrowserRouter>
+
+    </AuthProvider>
     
   </React.StrictMode>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
