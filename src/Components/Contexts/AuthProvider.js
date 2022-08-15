@@ -22,7 +22,7 @@ export function AuthProvider({ children }){
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        if(user) window.localStorage.setItem('user',JSON.stringify(user))
+        if(user) window.localStorage.setItem('user',JSON.stringify(user));
     }, [user]);
     
     function login(){
@@ -36,6 +36,7 @@ export function AuthProvider({ children }){
 
     function logout(){
         setUser(undefined);
+        window.localStorage.removeItem('user');
     }
 
     function check(){

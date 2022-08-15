@@ -1,16 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Login from './Components/Auth/login';
-import Register from './Components/Auth/register';
-import ForgotPassword from './Components/Auth/forgotPassword';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Dashboard from './Components/dashboard';
 import { AuthProvider } from './Components/Contexts/AuthProvider';
-import PrivateRoute from './Components/PrivateRoute';
-import GuestRoute from './Components/GuestRoute';
+import Routing from './Routing';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,27 +12,7 @@ root.render(
 
     <AuthProvider>
 
-    <BrowserRouter>
-
-    <Routes>
-
-      <Route path="/" element={<App/>}>
-
-        <Route index element={
-          <PrivateRoute>
-            <Dashboard/>
-          </PrivateRoute>
-        }/>
-
-        <Route path="login" element={<GuestRoute><Login/></GuestRoute>}/>
-        <Route path="register" element={<GuestRoute><Register/></GuestRoute>}/>
-        <Route path="forgot-password" element={<GuestRoute><ForgotPassword/></GuestRoute>}/>
-
-      </Route>
-      
-    </Routes>
-
-    </BrowserRouter>
+      <Routing></Routing>
 
     </AuthProvider>
     
