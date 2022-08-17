@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { AuthProvider } from './Components/Contexts/AuthProvider';
+import { AuthProvider } from './Contexts/AuthProvider';
 import Routing from './Routing';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

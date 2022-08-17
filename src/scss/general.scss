@@ -2,7 +2,7 @@
 
     button.button{
     display: block;
-    background-color:#E54B4B;
+    background-color:$color-orange;
     border:0;
     padding:15px 10px;
     color:#ffffff;
@@ -10,6 +10,12 @@
 
     &:hover{
       cursor: pointer;
+      background-color:$color-red;
+    }
+
+    &[disabled="true"],&[disabled]{
+      background-color:rgb(134, 134, 134);
+      cursor: default;
     }
 
   }
@@ -41,13 +47,13 @@
       padding:0;
       list-style-type: none;
 
-      li{
+      >li{
 
         line-height: 60px;
         display: inline;
         padding-right: 15px;
 
-        a{
+        >a{
 
           color:#ffffff;
           text-decoration: none;
@@ -59,3 +65,19 @@
     }
 
   }
+
+.alert{
+  background-color:$color-purple-darker;
+  padding:15px 20px;
+  color:#ffffff;
+  border-radius:10px;
+
+  &.alert--error{
+    border-left: 2px solid $color-red;
+  }
+
+  &.alert--success{
+    border-left: 2px solid $color-green;
+  }
+
+}

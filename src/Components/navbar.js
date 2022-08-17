@@ -1,4 +1,4 @@
-import { useAuth } from "./Contexts/AuthProvider";
+import { useAuth } from "../Contexts/AuthProvider";
 
 function Navbar(){
 
