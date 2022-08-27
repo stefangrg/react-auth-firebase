@@ -34,7 +34,14 @@ function ForgotPassword(){
     }
 
     function handleError(error){
-        setError(error.message);
+        switch(error.code){
+            case "auth/user-not-found":
+                setError("Nu am gasit nici un utilizator cu această adresă de email.");
+                break;
+            default:
+                setError("Email-ul pentru resetarea parolei nu a putut fi trimis.");
+                break;
+        }
         setLoading(false);
     }
 
