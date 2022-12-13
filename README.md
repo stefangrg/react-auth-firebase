@@ -2,6 +2,8 @@
 
 ![Auth Firebase](/assets/auth-firebase.png)
 
+Live demo: [https://authfirebase.stefangrigore.ro/](https://authfirebase.stefangrigore.ro/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
