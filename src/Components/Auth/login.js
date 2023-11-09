@@ -11,14 +11,19 @@ function Login(){
     const emailRef = useRef();
     const passwordRef = useRef();
 
-    function handleLogin(e){
+    async function handleLogin(e){
         e.preventDefault();
 
-        const validated = validation();
-        if(!validated) return;
+        if(!validation()) return;
 
         setLoading(true);
-        auth.login(emailRef.current.value,passwordRef.current.value, handleError, handleSuccess);
+        
+        try{
+            await auth.login(emailRef.current.value,passwordRef.current.value);
+            handleSuccess();
+        }catch(e){
+            handleError(e);
+        }
     }
 
     function validation(){

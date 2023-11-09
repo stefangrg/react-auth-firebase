@@ -43,14 +43,16 @@ export function AuthProvider({ children }){
         
     }
     
-    function login(email,password,errorCallback = null, successCallback = null){
-        signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-            if(successCallback) successCallback();
+    function login(email,password){
+
+        return new Promise(async (success,error) => {
+            try{
+                await signInWithEmailAndPassword(auth, email, password)
+                success()
+            }catch(err){
+                error(err);
+            }
         })
-        .catch((error) => {
-            if(errorCallback) errorCallback(error);
-        });
     }
 
     function logout(){
